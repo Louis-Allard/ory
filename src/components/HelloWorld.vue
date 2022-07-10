@@ -66,7 +66,7 @@ const ory = new V0alpha2Api(
   }),
 )
 
-const apiUrl = process.env.VUE_APP_API_URL || "http://localhost:8081"
+const apiUrl = process.env.VUE_APP_API_URL || "http://localhost:8080"
 
 export default {
   name: "HelloWorld",

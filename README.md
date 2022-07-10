@@ -166,7 +166,32 @@ npx @ory/cli tunnel --dev http://localhost:8080
 
 Les API Ory sont désormais mises en miroir sur http://localhost:4000. Utilisez cette URL comme baseUrl pour le SDK @ory/client (voir le code HelloWorld.vue ci-dessus). L'indicateur --dev désactive les vérifications de sécurité pour une intégration plus facile et ne doit pas être utilisé lors du déploiement du tunnel dans un environnement intermédiaire.
 
+In case of error with ory tunnel, see https://www.ory.sh/docs/cli/ory-tunnel
 
+### Fourth step
+
+Run the VueJS application
+
+Tout d'abord, configurez votre URL Ory Cloud SDK pour vous connecter aux API Ory dans votre projet Ory Cloud :
+
+Sur Linux:
+
+```
+# This is a public Ory Cloud Project.
+# Don’t submit any personally identifiable information in requests made with this project.
+# Sign up for Ory Cloud at
+#
+#   https://console.ory.sh/registration
+#
+# and create a free Ory Cloud Project to see your own configuration embedded in code samples!
+export ORY_SDK_URL=https://{your-project-slug-here}.projects.oryapis.com
+```
+
+Enfin lancer:
+
+```
+npm run serve
+```
 
 ## Project setup
 ```
@@ -187,6 +212,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
