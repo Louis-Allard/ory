@@ -151,11 +151,6 @@ Run the API
 Le modèle de sécurité Ory utilise des cookies HTTP pour gérer les sessions, les jetons et les cookies. Pour ce faire, les API Ory doivent être exposées sur le même domaine que votre application.
 
 Dans le cas de cet exemple, le domaine de votre application, qui s'exécute sur votre machine locale, est localhost.
-Info
-
-Lors du développement local, utilisez localhost ou 127.0.0.1, mais pas les deux. Bien que techniquement, cela signifie la même chose, ce sont des noms d'hôte différents.
-
-L'utilisation des deux de manière interchangeable dans votre code peut entraîner des problèmes avec l'origine des cookies HTTP envoyés par l'application. Lorsque cela se produit, les API Ory peuvent ne pas être en mesure de lire les cookies envoyés par votre application.
 
 Pour que votre application s'exécute localement et les API Ory sur le même domaine, utilisez Ory Tunnel - un outil de développement fourni avec Ory CLI. C'est comme un microservice - un serveur d'API d'authentification sur votre domaine !
 
@@ -166,7 +161,13 @@ npx @ory/cli tunnel --dev http://localhost:8080
 
 Les API Ory sont désormais mises en miroir sur http://localhost:4000. Utilisez cette URL comme baseUrl pour le SDK @ory/client (voir le code HelloWorld.vue ci-dessus). L'indicateur --dev désactive les vérifications de sécurité pour une intégration plus facile et ne doit pas être utilisé lors du déploiement du tunnel dans un environnement intermédiaire.
 
-In case of error with ory tunnel, see https://www.ory.sh/docs/cli/ory-tunnel
+En cas d'erreur avec ory tunnel, faire:
+
+```
+ory tunnel --project {nom-du-projet} http://localhost:8080
+```
+ 
+ sinon voir ici: https://www.ory.sh/docs/cli/ory-tunnel
 
 ### Fourth step
 
