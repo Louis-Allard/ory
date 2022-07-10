@@ -194,6 +194,25 @@ Enfin lancer:
 npm run serve
 ```
 
+## Ory Proxy
+
+Ory Proxy est un reverse proxy déployé devant votre application. Cela permet aux points de terminaison Ory d'être mis en miroir sur le même domaine que l'application que vous exécutez.
+
+Le proxy réécrit les cookies pour correspondre au domaine sur lequel se trouve actuellement votre application. Par conséquent, l'origine des cookies est définie correctement sur le domaine sur lequel vous exécutez l'application au lieu de <your-project-slug>.projects.oryapis.com.
+
+Ce comportement est nécessaire pour éviter les problèmes avec la stratégie CORS du navigateur.
+
+De plus, le proxy convertit les sessions en jetons Web JSON (JWT) et s'assure que les cookies et les URL sont correctement configurés.
+
+====
+L'utilisation du proxy est une alternative aux domaines personnalisés (CNAME) et un outil utile lors du développement local. Même si vous pouvez utiliser le proxy en production, nous vous recommandons d'utiliser un CNAME dans la mesure du possible.
+
+L'utilisation d'un domaine personnalisé est une solution plus transparente pour le déploiement en production - l'utilisation d'Ory Proxy nécessite une installation et une configuration supplémentaires.
+===
+
+Lorsqu'une application s'exécute sur http://localhost:3000, Ory doit être disponible sur le même domaine, par exemple sur http://localhost:4000. Grâce à une telle configuration, le système peut gérer les cookies anti-CSRF et les cookies de session Ory.
+
+
 ## Project setup
 ```
 npm install
