@@ -1,4 +1,4 @@
-# ory
+# Subject
 Test ory
 
 ## Assets
@@ -6,8 +6,10 @@ Test ory
 
  Ory :  https://console.ory.sh/projects/f3a9ca3d-5ae0-4cf6-bb3a-752386e9304b/created
 
-## Install
-### First step
+ YT: https://www.youtube.com/c/ORYAcadamy/videos
+
+# Install
+## First step
 
 ```
 npx @vue/cli create ory-spa --preset "Default (Vue 3)"
@@ -15,7 +17,7 @@ cd ory-spa
 npm i --save @ory/client
 ```
 
-### Second step
+## Second step
 
 Avec un projet Vue.js créé, ajoutez la logique Ory à l'application. L'application doit reconnaître si l'utilisateur est connecté et s'il a une session valide.
 
@@ -144,7 +146,7 @@ export default {
 </style>
 ```
 
-### Third step
+## Third step
 
 Run the API
 
@@ -169,7 +171,7 @@ ory tunnel --project {nom-du-projet} http://localhost:8080
  
  sinon voir ici: https://www.ory.sh/docs/cli/ory-tunnel
 
-### Fourth step
+## Fourth step
 
 Run the VueJS application
 
@@ -215,22 +217,22 @@ L'utilisation d'un domaine personnalisé est une solution plus transparente pour
 Lorsqu'une application s'exécute sur http://localhost:3000, Ory doit être disponible sur le même domaine, par exemple sur http://localhost:4000. Grâce à une telle configuration, le système peut gérer les cookies anti-CSRF et les cookies de session Ory.
 
 
-## Project setup
+# Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## Compiles and hot-reloads for development
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+## Compiles and minifies for production
 ```
 npm run build
 ```
 
-### Lints and fixes files
+## Lints and fixes files
 ```
 npm run lint
 ```
